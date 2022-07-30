@@ -1,1 +1,128 @@
-<p>favourites</p>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <style>
+        @keyframes h1-effect {
+            0% {color: rgb(255, 200, 255)}
+            33% {color: rgb(200, 255, 255)}
+            66% {color: rgb(255, 255, 200)}
+            100% {color: rgb(255, 200, 255)}
+        }
+        @keyframes text-effect {
+            0% {color: #ffcccc}
+            10% {color: #ffebcc}
+            20% {color: #f5ffcc}
+            30% {color: #d6ffcc}
+            40% {color: #ccffe0}
+            50% {color: #ccffff}
+            60% {color: #cce0ff}
+            70% {color: #d6ccff}
+            80% {color: #f5ccff}
+            90% {color: #ffcceb}
+            100% {color: #ffcccc}
+        }
+        @keyframes effect1 {
+            0% {background-color: rgb(60, 0, 0)}
+            10% {background-color: rgb(47, 0, 0)}
+            25% {background-color: rgb(37, 0, 0)}
+            40% {background-color: rgb(30, 0, 0)}
+            60% {background-color: rgb(24, 0, 0)}
+            100% {background-color: rgb(20, 0, 0)}
+            0% {border-color: white}
+            10% {border-color: rgb(235, 255, 255)}
+            25% {border-color: rgb(220, 255, 255)}
+            40% {border-color: rgb(200, 255, 255)}
+            60% {border-color: rgb(180, 255, 255)}
+            100% {border-color: rgb(170, 255, 255)}
+        }
+        @keyframes effect2 {
+            0% {background-color: rgb(0, 60, 0)}
+            10% {background-color: rgb(0, 47, 0)}
+            25% {background-color: rgb(0, 37, 0)}
+            40% {background-color: rgb(0, 30, 0)}
+            60% {background-color: rgb(0, 24, 0)}
+            100% {background-color: rgb(0, 20, 0)}
+            0% {border-color: white}
+            10% {border-color: rgb(255, 235, 255)}
+            25% {border-color: rgb(255, 220, 255)}
+            40% {border-color: rgb(255, 200, 255)}
+            60% {border-color: rgb(255, 180, 255)}
+            100% {border-color: rgb(255, 170, 255)}
+        }
+        @keyframes effect3 {
+            0% {background-color: rgb(0, 0, 60)}
+            10% {background-color: rgb(0, 0, 47)}
+            25% {background-color: rgb(0, 0, 37)}
+            40% {background-color: rgb(0, 0, 30)}
+            60% {background-color: rgb(0, 0, 24)}
+            100% {background-color: rgb(0, 0, 20)}
+            0% {border-color: white}
+            10% {border-color: rgb(255, 255, 235)}
+            25% {border-color: rgb(255, 255, 220)}
+            40% {border-color: rgb(255, 255, 200)}
+            60% {border-color: rgb(255, 255, 180)}
+            100% {border-color: rgb(255, 255, 170)}
+        }
+        body {
+            background-color: black;
+            width: 100%;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1 {
+            font-weight: bold;
+            font-size: 120px;
+            animation: h1-effect 4s infinite;
+            margin: 50px 70px 40px 70px;
+        }
+        div {
+            width: 100%;
+            display: block;
+            border-top: 10px solid;
+            height: 300px;
+            white-space: nowrap;
+            overflow: clip;
+            text-overflow: ellipsis;
+        }
+        .bottom {
+            height: 0;
+        }
+        .r {animation: effect1 0.4s infinite}
+        .g {animation: effect2 0.4s infinite}
+        .b {animation: effect3 0.4s infinite}
+        img {
+            height: 300px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        p {
+            margin-left: 100px;
+            font-size: 70px;
+            display: inline-block;
+            vertical-align: middle;
+            animation: text-effect 3s infinite;
+        }
+        h2 {
+            margin-left: 100px;
+            display: inline-block;
+            vertical-align: top;
+            cursor: pointer;
+            color: white;
+            font-size: 100px;
+            animation: text-effect 3s infinite;
+            width: 200px;
+        }
+        h2:hover {
+            animation: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>favourites</h1>
+    <div class="r">
+        <h2>—</h2>
+        <img src="https://c.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif">
+        <p>image 1 fsdfsdfsdfsdfsdfsdafasdfasdfsadf</p>
+    </div>
+    <div class="b bottom"></div>
+</body>
