@@ -12,14 +12,27 @@ body {
 }
 h1 {
     font-weight: bold;
-    font-size: 100px;
+    font-size: 120px;
     animation: effect 6s infinite;
     margin: 50px 70px 40px 70px;
 }
+h2 {
+    display: inline-block;
+    margin: 20px 0 0 70px;
+    font-weight: bold;
+    font-size: 60px;
+    color: white;
+    padding: 30px;
+    border: 4px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.add {background: linear-gradient(to right, rgb(255, 180, 0) 0%, rgb(255, 0, 255) 100%)}
+.remove {background-color: grey}
 p {
     margin: 0 70px 40px 70px;
     font-size: 30px;
 }
-.r {color: rgb(255, 250, 250)}
-.g {color: rgb(252, 255, 252)}
-.b {color: rgb(250, 250, 255)}
+.r {color: rgb(255, 245, 245)}
+.g {color: rgb(245, 255, 245)}
+.b {color: rgb(245, 245, 255)}
