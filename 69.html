@@ -1,0 +1,166 @@
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <script>
+        const images = ["https://c.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif", "https://upload.wikimedia.org/wikipedia/commons/3/3f/Totally_not_a_Rickroll_QR_code.png", "https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/RickRoll.png/250px-RickRoll.png", "https://i.kym-cdn.com/news/posts/desktop/000/001/299/cover11.jpg", "https://s.yimg.com/ny/api/res/1.2/aMLVoTIHrDS1J91FuAW5bg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://s.yimg.com/dh/ap/default/140117/rickroll1.jpg"];
+        const descs = [
+            "<div class='descgroup'><a href='69421.html' class='desc'>image 1</a><p class='desc'>image 1 description Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>", 
+            "<div class='descgroup'><a href='69422.html' class='desc'>image 2</a><p class='desc'>image 2 description Cras consequat ipsum arcu, in faucibus est vehicula ut.</p></div>", 
+            "<div class='descgroup'><a href='69423.html' class='desc'>image 3</a><p class='desc'>image 3 description Donec lobortis nec quam id finibus.</p></div>", 
+            "<div class='descgroup'><a href='69424.html' class='desc'>image 4</a><p class='desc'>image 4 description Proin venenatis tellus eu lacus hendrerit, id posuere lorem imperdiet.</p></div>", 
+            "<div class='descgroup'><a href='69425.html' class='desc'>image 5</a><p class='desc'>image 5 description Morbi turpis justo, tempor sit amet nisi a, euismod hendrerit erat.</p></div>"
+        ]
+        const imagecount = images.length;
+        let alldesc = document.querySelectorAll(".desc");
+        let descdisplay = "none";
+        let paused = false;
+        var hovered = false;
+        var current = 0;
+        function endanimation() {
+            document.querySelector(".carousel").style.animation = "none";
+            document.querySelector(".c1").style.backgroundImage = "url(" + images[current % imagecount] + ")";
+            document.querySelector(".c2").style.backgroundImage = "url(" + images[(current + 1) % imagecount] + ")";
+            document.querySelector(".c3").style.backgroundImage = "url(" + images[(current + 2) % imagecount] + ")";
+            document.querySelector(".c4").style.backgroundImage = "url(" + images[(current + 3) % imagecount] + ")";
+            document.querySelector(".c1").innerHTML = descs[(current % imagecount)];
+            document.querySelector(".c2").innerHTML = descs[((current + 1) % imagecount)];
+            document.querySelector(".c3").innerHTML = descs[((current + 2) % imagecount)];
+            document.querySelector(".c4").innerHTML = descs[((current + 3) % imagecount)];
+            alldesc = document.querySelectorAll(".desc");
+            if (descdisplay == "none") {
+                for (target of alldesc) {
+                    target.style.display = "none";
+                }
+            }
+        }
+        function switchimage() {
+            if (hovered) {
+                paused = true;
+            } else {
+                document.querySelector(".carousel").style.animation = "nextimage 2s ease-in-out"
+                current += 1;
+                setTimeout(endanimation, 2000);
+            }
+        }
+        function resumeanimation() {
+            hovered = false;
+            if (paused) {
+                clearInterval(interval);
+                switchimage();
+                interval = setInterval(switchimage, 3000);
+                paused = false;
+            }
+        }
+        function toggleinfo() {
+            for (target of alldesc) {
+                if (target.style.display == "none") {
+                    target.style.display = "block";
+                    descdisplay = "block";
+                } else {
+                    target.style.display = "none";
+                    descdisplay = "none";
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: black;
+            width: 100%;
+            margin: 0;
+            text-align: center;
+        }
+        .imagerow {
+            border-top: 5px solid rgb(255, 100, 100);
+            border-bottom: 5px solid rgb(255, 100, 100);
+            margin: 5% 0;
+            background-color: rgb(20, 0, 0);
+            width: 100%;
+            height: 60%;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: rgb-effect 3s ease-in-out 0s infinite;
+        }
+        @keyframes rgb-effect {
+            33% {
+                border-color: rgb(100, 255, 100);
+                background-color: rgb(0, 20, 0);
+            }
+            66% {
+                border-color: rgb(100, 100, 255);
+                background-color: rgb(0, 0, 20);
+            }
+            100% {
+                border-color: rgb(255, 100, 100);
+                background-color: rgb(20, 0, 0);
+            }
+        }
+        .carousel {
+            width: 100%;
+            position: relative;
+            right: 40%;
+        }
+        .carousel:hover {
+            animation: none;
+        }
+        @keyframes nextimage {
+            to {transform: translateX(calc(-60% - 10px))}
+        }
+        .container {
+            width: 60%;
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            border-right: 5px solid rgb(255, 100, 100);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: rgb-effect 3s linear 0s infinite;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            text-overflow: ellipsis;
+            cursor: pointer;
+        }
+        .desc {
+            color: white;
+            background-color: rgba(0,0,0,0.5);
+            margin: 20px;
+            white-space: normal;
+        }
+        .descgroup > a {
+            display: block;
+            font-size: 70px;
+        }
+        .descgroup > p {font-size: 30px}
+        .favourites {
+            display: inline-block;
+            margin: auto;
+            padding: 25px 100px;
+            background: linear-gradient(to right, rgb(255, 180, 0) 0%, rgb(255, 0, 255) 100%);
+            border: 3px solid white;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 40px;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="imagerow">
+        <div class="carousel" onmouseover="hovered = true" onmouseleave="resumeanimation()" onclick="toggleinfo()">
+            <div class="container c1"></div>
+            <div class="container c2"></div>
+            <div class="container c3"></div>
+            <div class="container c4"></div>
+        </div>
+        <script>
+            endanimation();
+            switchimage();
+            var interval = setInterval(switchimage, 3000);
+            toggleinfo();
+        </script>sss
+    </div>
+    <a href="69420.html" class="favourites">favourites</a>
+</body>
