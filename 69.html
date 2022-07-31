@@ -1,14 +1,7 @@
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <script src="42069.js"></script>
     <script>
-        const images = ["https://c.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif", "https://upload.wikimedia.org/wikipedia/commons/3/3f/Totally_not_a_Rickroll_QR_code.png", "https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/RickRoll.png/250px-RickRoll.png", "https://i.kym-cdn.com/news/posts/desktop/000/001/299/cover11.jpg", "https://s.yimg.com/ny/api/res/1.2/aMLVoTIHrDS1J91FuAW5bg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://s.yimg.com/dh/ap/default/140117/rickroll1.jpg"];
-        const descs = [
-            "<div class='descgroup'><a href='69421.html' class='desc'>image 1</a><p class='desc'>image 1 description Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>", 
-            "<div class='descgroup'><a href='69422.html' class='desc'>image 2</a><p class='desc'>image 2 description Cras consequat ipsum arcu, in faucibus est vehicula ut.</p></div>", 
-            "<div class='descgroup'><a href='69423.html' class='desc'>image 3</a><p class='desc'>image 3 description Donec lobortis nec quam id finibus.</p></div>", 
-            "<div class='descgroup'><a href='69424.html' class='desc'>image 4</a><p class='desc'>image 4 description Proin venenatis tellus eu lacus hendrerit, id posuere lorem imperdiet.</p></div>", 
-            "<div class='descgroup'><a href='69425.html' class='desc'>image 5</a><p class='desc'>image 5 description Morbi turpis justo, tempor sit amet nisi a, euismod hendrerit erat.</p></div>"
-        ]
         const imagecount = images.length;
         let alldesc = document.querySelectorAll(".desc");
         let descdisplay = "none";
@@ -17,14 +10,14 @@
         var current = 0;
         function endanimation() {
             document.querySelector(".carousel").style.animation = "none";
-            document.querySelector(".c1").style.backgroundImage = "url(" + images[current % imagecount] + ")";
-            document.querySelector(".c2").style.backgroundImage = "url(" + images[(current + 1) % imagecount] + ")";
-            document.querySelector(".c3").style.backgroundImage = "url(" + images[(current + 2) % imagecount] + ")";
-            document.querySelector(".c4").style.backgroundImage = "url(" + images[(current + 3) % imagecount] + ")";
-            document.querySelector(".c1").innerHTML = descs[(current % imagecount)];
-            document.querySelector(".c2").innerHTML = descs[((current + 1) % imagecount)];
-            document.querySelector(".c3").innerHTML = descs[((current + 2) % imagecount)];
-            document.querySelector(".c4").innerHTML = descs[((current + 3) % imagecount)];
+            document.querySelector(".c1").style.backgroundImage = "url(" + images[current % imagecount].source + ")";
+            document.querySelector(".c2").style.backgroundImage = "url(" + images[(current + 1) % imagecount].source + ")";
+            document.querySelector(".c3").style.backgroundImage = "url(" + images[(current + 2) % imagecount].source + ")";
+            document.querySelector(".c4").style.backgroundImage = "url(" + images[(current + 3) % imagecount].source + ")";
+            document.querySelector(".c1").innerHTML = images[(current % imagecount)].createdesc();
+            document.querySelector(".c2").innerHTML = images[((current + 1) % imagecount)].createdesc();
+            document.querySelector(".c3").innerHTML = images[((current + 2) % imagecount)].createdesc();
+            document.querySelector(".c4").innerHTML = images[((current + 3) % imagecount)].createdesc();
             alldesc = document.querySelectorAll(".desc");
             if (descdisplay == "none") {
                 for (target of alldesc) {
@@ -160,7 +153,7 @@
             switchimage();
             var interval = setInterval(switchimage, 3000);
             toggleinfo();
-        </script>sss
+        </script>
     </div>
-    <a href="69420.html" class="favourites">favourites</a>
+    <a href="69420.html" target="_blank" class="favourites">favourites</a>
 </body>
