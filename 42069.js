@@ -12,7 +12,7 @@ class image {
         return `<div class='descgroup'><a href='${this.page}' class='desc'>${this.title}</a><p class='desc'>${this.desc}</p></div>`
     }
     createfav(colors) {
-        if (localStorage.getItem(String(this.id)) == "f") {
+        if (localStorage.getItem(this.id) == "f") {
             return `<div class='fav ${colors} i${this.id}'><h2>—</h2><img src='${this.source}'><p>${this.title}</p></div>`
         } else {
             return ''
