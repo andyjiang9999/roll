@@ -13,7 +13,7 @@ class image {
     }
     createfav(colors) {
         if (localStorage.getItem(this.id) == "f") {
-            return `<div class='fav ${colors} i${this.id}'><h2>—</h2><img src='${this.source}'><p>${this.title}</p></div>`
+            return `<div class='fav ${colors}'><h2 onclick='remove(${this.id})'>—</h2><img src='${this.source}'><p>${this.title}</p></div>`
         } else {
             return ''
         }
