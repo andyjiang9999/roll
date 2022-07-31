@@ -78,10 +78,10 @@
             width: 100%;
             display: block;
             border-top: 10px solid;
-            height: 300px;
+            height: fit-content;
             white-space: nowrap;
-            overflow: clip;
-            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-right: 100px;
         }
         .bottom {
             height: 0;
@@ -90,11 +90,12 @@
         .g {animation: effect2 0.4s infinite}
         .b {animation: effect3 0.4s infinite}
         img {
-            height: 300px;
+            width: 400px;
             display: inline-block;
             vertical-align: middle;
         }
         p {
+            margin: 0;
             margin-left: 100px;
             font-size: 70px;
             display: inline-block;
@@ -102,9 +103,10 @@
             animation: text-effect 3s infinite;
         }
         h2 {
+            margin: 0;
             margin-left: 100px;
             display: inline-block;
-            vertical-align: top;
+            vertical-align: middle;
             cursor: pointer;
             color: white;
             font-size: 100px;
@@ -118,11 +120,31 @@
     </style>
 </head>
 <body>
-    <h1>favourites</h1>
-    <div class="r">
+    <h1>favourites ★</h1>
+    <div class="r i0">
         <h2>—</h2>
         <img src="https://c.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif">
-        <p>image 1 fsdfsdfsdfsdfsdfsdafasdfasdfsadf</p>
+        <p>image 1</p>
+    </div>
+    <div class="g i1">
+        <h2>—</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Totally_not_a_Rickroll_QR_code.png">
+        <p>image 2</p>
+    </div>
+    <div class="b i2">
+        <h2>—</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/RickRoll.png/250px-RickRoll.png">
+        <p>image 3</p>
+    </div>
+    <div class="r i3">
+        <h2>—</h2>
+        <img src="https://i.kym-cdn.com/news/posts/desktop/000/001/299/cover11.jpg">
+        <p>image 4</p>
+    </div>
+    <div class="g i4">
+        <h2>—</h2>
+        <img src="https://s.yimg.com/ny/api/res/1.2/aMLVoTIHrDS1J91FuAW5bg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://s.yimg.com/dh/ap/default/140117/rickroll1.jpg">
+        <p>image 5</p>
     </div>
     <div class="b bottom"></div>
 </body>
