@@ -28,6 +28,7 @@ h2, a {
     cursor: pointer;
     user-select: none;
     text-align: center;
+    text-decoration: none;
 }
 h2 {width: 45%}
 a {width: 30%}

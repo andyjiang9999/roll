@@ -11,8 +11,12 @@ class image {
     createdesc() {
         return `<div class='descgroup'><a href='${this.page}' class='desc'>${this.title}</a><p class='desc'>${this.desc}</p></div>`
     }
-    createfav() {
-        return `<div class='i${this.id}'><h2>—</h2><img src='${this.source}'><p>${this.title}</p></div>`
+    createfav(colors) {
+        if (localStorage.getItem(String(this.id)) == "f") {
+            return `<div class='fav ${colors} i${this.id}'><h2>—</h2><img src='${this.source}'><p>${this.title}</p></div>`
+        } else {
+            return ''
+        }
     }
 }
 const images = [
@@ -22,7 +26,7 @@ const images = [
     new image("https://i.kym-cdn.com/news/posts/desktop/000/001/299/cover11.jpg", "image 4", "image 4 description Proin venenatis tellus eu lacus hendrerit, id posuere lorem imperdiet.", "69424.html"),
     new image("https://s.yimg.com/ny/api/res/1.2/aMLVoTIHrDS1J91FuAW5bg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://s.yimg.com/dh/ap/default/140117/rickroll1.jpg", "image 5", "image 5 description Morbi turpis justo, tempor sit amet nisi a, euismod hendrerit erat.", "69425.html")
 ]
-function toggle(id) {
+function togglefav(id) {
     if (localStorage.getItem(id)) {
         localStorage.removeItem(id);
     } else {

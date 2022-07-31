@@ -1,6 +1,20 @@
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
     <script src="42069.js"></script>
+    <script>
+        function refreshfaves() {
+            let faves = "";
+            let colors = ['r', 'g', 'b'][Math.floor(Math.random() * 3)];
+            for (image of images) {
+                faves = faves + image.createfav(colors)
+                if (colors == "r") {colors = "g"}
+                else if (colors == "g") {colors = "b"}
+                else {colors = "r"}
+            }
+            faves = faves + `<div class='bottom fav ${colors}'></div>`
+            document.querySelector('.faves').innerHTML = faves;
+        }
+    </script>
     <style>
         @keyframes h1-effect {
             0% {color: rgb(255, 200, 255)}
@@ -75,7 +89,11 @@
             animation: h1-effect 4s infinite;
             margin: 50px 70px 40px 70px;
         }
-        div {
+        .favs {
+            width: 100%;
+            display: block;
+        }
+        .fav {
             width: 100%;
             display: block;
             border-top: 10px solid;
@@ -122,30 +140,6 @@
 </head>
 <body>
     <h1>favourites ★</h1>
-    <div class="r i0">
-        <h2>—</h2>
-        <img src="https://c.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif">
-        <p>image 1</p>
-    </div>
-    <div class="g i1">
-        <h2>—</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Totally_not_a_Rickroll_QR_code.png">
-        <p>image 2</p>
-    </div>
-    <div class="b i2">
-        <h2>—</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/RickRoll.png/250px-RickRoll.png">
-        <p>image 3</p>
-    </div>
-    <div class="r i3">
-        <h2>—</h2>
-        <img src="https://i.kym-cdn.com/news/posts/desktop/000/001/299/cover11.jpg">
-        <p>image 4</p>
-    </div>
-    <div class="g i4">
-        <h2>—</h2>
-        <img src="https://s.yimg.com/ny/api/res/1.2/aMLVoTIHrDS1J91FuAW5bg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://s.yimg.com/dh/ap/default/140117/rickroll1.jpg">
-        <p>image 5</p>
-    </div>
-    <div class="b bottom"></div>
+    <div class="faves"></div>
+    <script>refreshfaves()</script>
 </body>
