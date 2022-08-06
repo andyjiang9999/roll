@@ -1,0 +1,25 @@
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <link rel="stylesheet" href="pages.css">
+    <script src="42069.js"></script>
+    <script src="data.js"></script>
+    <script>
+        if (sessionStorage.getItem('pageid') == null) {
+            location.href = "69.html";
+        }
+    </script>
+</head>
+<body>
+    <h1 id="h"></h1>
+    <img id="i">
+    <div id="d"></div>
+    <h2 class="fbutton" onclick="togglefav(sessionStorage.getItem('pageid')); loadbutton(sessionStorage.getItem('pageid'));">add to favourites</h2>
+    <a class="add" href="69420.html" target="_blank">go to favourites</a>
+    <a class="home" href="69.html">homepage</a>
+    <script>
+        document.getElementById('d').innerHTML = images[sessionStorage.getItem('pageid')].createpage();
+        document.getElementById('h').innerText = images[sessionStorage.getItem('pageid')].title;
+        document.getElementById('i').src = images[sessionStorage.getItem('pageid')].source;
+        loadbutton(sessionStorage.getItem('pageid'));
+    </script>
+</body>

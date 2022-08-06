@@ -41,9 +41,9 @@ p {
     margin: 0 70px 40px 70px;
     font-size: 30px;
 }
-.r {color: rgb(255, 245, 245)}
-.g {color: rgb(245, 255, 245)}
-.b {color: rgb(245, 245, 255)}
+.r {color: rgb(255, 240, 240)}
+.g {color: rgb(240, 255, 240)}
+.b {color: rgb(240, 240, 255)}
 .home {
     width: auto;
     display: block;
